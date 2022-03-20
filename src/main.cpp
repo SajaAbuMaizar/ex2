@@ -96,6 +96,7 @@ int main()
     // Creating the field validators
     auto nameValidator    = std::make_unique<NoDigitValidator>            ();
     auto idValidator      = std::make_unique<IDValidator>                 ();
+    
     auto ageValidator     = std::make_unique<RangeValidator<int>>         (currentYear()-MAX_AGE, currentYear()-MIN_AGE);
     auto facultyValidator = std::make_unique<RangeValidator<FacultyValue>>(1, 3);
     auto yearValidator    = std::make_unique<RangeValidator<int>>         (1, MAX_POSSIBLE_YEAR);

@@ -7,8 +7,3 @@ enum FacultyValue
 	Medicine = 2,
 	Literature = 3
 };
-
-class FacultyValidator : public Validator
-{
-
-};
