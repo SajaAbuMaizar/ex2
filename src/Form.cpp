@@ -2,11 +2,13 @@
 
 void Form::fillForm()
 {
-	m_answers.resize(m_questions.size());
-	for (int question = 0; question < m_questions.size(); question++)
+	for (int question = 0; question < m_fields.size(); question++)
 	{
-		std::cout << m_questions[question] << std::endl;
-		m_answers[question]->fillData();
+		if (!m_fields[question]->getValid())
+		{
+			std::cout << m_fields[question]->getQuestion() << std::endl;
+			m_answers[question]->fillData();
+		}
 	}
 }
 

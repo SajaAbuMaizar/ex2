@@ -8,12 +8,15 @@ class Field : public BaseField
 {
 public:
 	Field(std::string my_string);
+	virtual ~Field() = default;
 	std::string getQuestion() const;
 	void addValidator(Validator<T>* validator);
 	Field<T>& get();
+	virtual bool getValid() const;
 
 private:
 	std::string m_string;
+	bool m_valid;
 	Validator<T>* m_validator;
 };
 
@@ -40,3 +43,10 @@ Field<T>& Field<T>::get()
 {
 	return *this;
 }
+
+template<class T>
+bool Field<T>::getValid() const
+{
+	return m_valid;
+}
+
