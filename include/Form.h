@@ -9,13 +9,18 @@
 class Form
 {
 public:
+	Form() {m_valid = true; };
 	void fillForm();
 	void addField(BaseField* field);
 	void addValidator(TwoBaseValidator* validator);
+	bool validateForm();
+	void printFields(std::ostream& os) const;
 
 private:
 	std::vector<BaseField*> m_fields;
 	std::vector<TwoBaseValidator*> m_validators;
-	std::vector<DataBase<class T>*> m_answers;
+	bool m_valid;
 
 };
+
+std::ostream& operator<<(std::ostream& ostr, const Form& form);
