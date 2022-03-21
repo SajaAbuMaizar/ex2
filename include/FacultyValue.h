@@ -16,5 +16,5 @@ private:
 
 std::istream& operator >>(std::istream& inp, FacultyValue& fValue);
 std::ostream& operator <<(std::ostream& out, const FacultyValue& fValue);
-bool operator>= (const FacultyValue& f1, const FacultyValue& f2);
-bool operator<=(const FacultyValue& f1, const FacultyValue& f2);
+bool operator> (const FacultyValue& f1, const FacultyValue& f2);
+bool operator<(const FacultyValue& f1, const FacultyValue& f2);

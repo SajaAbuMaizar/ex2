@@ -1,6 +1,8 @@
 #pragma once
 #include "Validator.h"
 
+#include <iostream>
+
 template <class T>
 class RangeValidator : public Validator <T>
 {
@@ -32,7 +34,7 @@ RangeValidator<T>& RangeValidator<T>::get()
 template <class T>
 bool RangeValidator<T>::validate(T value)
 {
-	if (value <= m_minValue || value >= m_maxValue)
+	if (value < m_minValue || value > m_maxValue)
 		return false;
 	return true;
 }

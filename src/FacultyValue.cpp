@@ -33,7 +33,7 @@ std::ostream& operator<<(std::ostream& out, const FacultyValue& fValue)
 	switch (fValue.getFaculty())
 	{
 	case 1:
-		out << "Computer Sience";
+		out << "Computer Science";
 		break;
 	case 2:
 		out << "Medicine";
@@ -48,12 +48,12 @@ std::ostream& operator<<(std::ostream& out, const FacultyValue& fValue)
 	return out;
 }
 
-bool operator>=(const FacultyValue& f1, const FacultyValue& f2)
+bool operator>(const FacultyValue& f1, const FacultyValue& f2)
 {
-	return f1.getFaculty() >= f2.getFaculty();
+	return f1.getFaculty() > f2.getFaculty();
 }
 
-bool operator<=(const FacultyValue& f1, const FacultyValue& f2)
+bool operator<(const FacultyValue& f1, const FacultyValue& f2)
 {
-	return f1.getFaculty() <= f2.getFaculty();
+	return f1.getFaculty() < f2.getFaculty();
 }

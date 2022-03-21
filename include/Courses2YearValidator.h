@@ -44,10 +44,10 @@ bool Courses2YearValidator<T1, T2>::validate()
 	if ((year == 1 || year == 2) && (course >= 2 && course <= 6))
 		m_valid = true;
 
-	if ((year == 3 || year == 4) && (course == 2 && course <= 10))
+	if ((year == 3 || year == 4) && (course >= 2 && course <= 10))
 		m_valid = true;
 
-	if (year >= 5 && (course == 2 && course <= 8))
+	if (year >= 5 && (course >= 2 && course <= 8))
 		m_valid = true;
 
 	if (!m_valid)

@@ -13,12 +13,12 @@ public:
 private:
 };
 
-IDValidator::IDValidator()
+inline IDValidator::IDValidator()
 {
 
 }
 
-bool IDValidator::validate(uint32_t id)
+inline bool IDValidator::validate(uint32_t id)
 {
 	std::string temp = std::to_string(id);
 
@@ -39,7 +39,7 @@ bool IDValidator::validate(uint32_t id)
 	return (counter % 10 == 0);
 }
 
-std::string IDValidator::getErrorMsg() const
+inline std::string IDValidator::getErrorMsg() const
 {
 	return "Wrong Control Digit!\n";
 }

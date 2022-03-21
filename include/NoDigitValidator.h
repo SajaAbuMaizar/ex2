@@ -16,12 +16,12 @@ private:
 
 };
 
-NoDigitValidator::NoDigitValidator()
+inline NoDigitValidator::NoDigitValidator()
 {
 
 }
 
-bool NoDigitValidator::validate(std::string my_string)
+inline bool NoDigitValidator::validate(std::string my_string)
 {
 	for (int i = 0; i < my_string.size(); i++)
 		if (isdigit(my_string[i]))
@@ -29,7 +29,7 @@ bool NoDigitValidator::validate(std::string my_string)
 	return true;
 }
 
-std::string NoDigitValidator::getErrorMsg() const
+inline std::string NoDigitValidator::getErrorMsg() const
 {
 	return "Can't contain digits!\n";
 }
