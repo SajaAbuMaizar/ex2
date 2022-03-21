@@ -29,9 +29,11 @@ bool Form::validateForm()
 		if (!m_fields[answer]->validate())
 			m_valid = false;
 
-	for (int answer = 0; answer < m_validators.size(); answer++)
-		if (!m_validators[answer]->validate())
-			m_valid = false;
+	if (m_valid)
+		for (int answer = 0; answer < m_validators.size(); answer++)
+			if (!m_validators[answer]->validate())
+				m_valid = false;
+
 	return m_valid;
 }
 
