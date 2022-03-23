@@ -21,6 +21,7 @@ private:
 
 };
 
+//this function sets the validation for the two fields in the class private members to false
 template <class T1, class T2>
 void Faculty2YearValidator<T1, T2>::setFieldsValid()
 {
@@ -28,6 +29,7 @@ void Faculty2YearValidator<T1, T2>::setFieldsValid()
 	m_yearField->setValid();
 }
 
+//the class c-tor
 template <class T1, class T2>
 Faculty2YearValidator<T1,T2>::Faculty2YearValidator(T1* facultyField, T2* yearField)
 {
@@ -35,6 +37,8 @@ Faculty2YearValidator<T1,T2>::Faculty2YearValidator(T1* facultyField, T2* yearFi
 	m_yearField = yearField;
 }
 
+//this function validate that the faculty and the year for the student are matchable
+//returns true if fit, false otherwise.
 template <class T1, class T2>
 bool Faculty2YearValidator<T1, T2>::validate()
 {
@@ -42,7 +46,7 @@ bool Faculty2YearValidator<T1, T2>::validate()
 	int year = m_yearField->getAnswer();
 
 	m_valid = true;
-	switch (faculty)
+	switch (faculty)//compare accoring to the requierments
 	{
 	case(ComputerScience):
 		if (year > 4)
@@ -66,8 +70,19 @@ bool Faculty2YearValidator<T1, T2>::validate()
 	return m_valid;
 }
 
+//this function returns a special error message for the case if
+//the faculty and years don't match
 template<class T1, class T2>
 std::string Faculty2YearValidator<T1, T2>::getErrorMsg() const
 {
 	return "Faculty and year don't match!\n";
 }
+
+/*
+//the class d-tor
+~Faculty2YearValidator<T1,T2>::Faculty2YearValidator()
+{
+	delete m_facultyField;
+	delete m_yearField;
+}
+*/

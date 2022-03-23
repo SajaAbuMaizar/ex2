@@ -30,6 +30,8 @@ private:
 	
 };
 
+//this function prints out the field with its answer
+//in case of an error in the answer it prints an error message
 template <class T>
 void Field<T>::print(std::ostream& os)
 {
@@ -39,17 +41,20 @@ void Field<T>::print(std::ostream& os)
 	os << std::endl;
 }
 
-
+//this function takes in the user's input
 template <class T>
 void Field<T>::fillData() {
 	std::cin >> m_answer;
 }
 
+/////////
 template <class T>
 void Field<T>::showData() {
 	std::cout << m_answer;
 }
+/////////
 
+//the class c-tor
 template <class T>
 Field<T>::Field(std::string my_string)
 {
@@ -69,6 +74,7 @@ T Field<T>::getAnswer() const
 	return m_answer;;
 }
 
+//this function adds an appropriate validator to every field
 template <class T>
 void Field<T>::addValidator(Validator<T>* validator)
 {
@@ -86,17 +92,28 @@ bool Field<T>::getValid() const
 {
 	return m_valid;
 }
+
+//this function sets the validation of the field called to false
 template<class T>
 void Field<T>::setValid()
 {
 	m_valid = false;
 }
 
+//this function validates the function according to the validator
+//returns true if the field is correct, false otherwise.
 template<class T>
 bool Field<T>::validate()
 {
 	m_valid = m_validator->validate(m_answer);
-	m_errorMessage = m_validator->getErrorMsg();
+	m_errorMessage = m_validator->getErrorMsg();//setting an error msg in case of an error
 	return m_valid;
 }
 
+/*
+//the class d-tor
+~Field<T>::Field()
+{
+	delete[] m_validator;
+}
+*/

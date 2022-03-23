@@ -18,6 +18,7 @@ private:
 
 };
 
+//the class c-tor
 template <class T>
 RangeValidator<T>::RangeValidator(const T& min, const T& max)
 {
@@ -31,6 +32,8 @@ RangeValidator<T>& RangeValidator<T>::get()
 	return *this;
 }
 
+//this function validates if the number giver is in range
+//returns true if in range, false otherwise
 template <class T>
 bool RangeValidator<T>::validate(T value)
 {
@@ -39,6 +42,7 @@ bool RangeValidator<T>::validate(T value)
 	return true;
 }
 
+//this function returns an error message
 template <class T>
 std::string RangeValidator<T>::getErrorMsg() const
 {

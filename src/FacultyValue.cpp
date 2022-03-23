@@ -10,6 +10,7 @@ FacultyValue::~FacultyValue()
 {
 }
 
+
 void FacultyValue::setFaculty(int n)
 {
 	m_FacultyType = n;
@@ -28,6 +29,8 @@ std::istream& operator>>(std::istream& inp, FacultyValue& fValue)
 	return inp;
 }
 
+//this function (operator<<) takes in the faculty number and converts it into 
+//its name (1 = computer science, 2 = Medicine, 3 = Literature)
 std::ostream& operator<<(std::ostream& out, const FacultyValue& fValue)
 {
 	switch (fValue.getFaculty())

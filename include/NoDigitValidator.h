@@ -16,11 +16,14 @@ private:
 
 };
 
+//the class c-tor
 inline NoDigitValidator::NoDigitValidator()
 {
 
 }
 
+//this function validates if the answer doesn't have numbers
+//returns true if there's not a number in the string, false otherwise
 inline bool NoDigitValidator::validate(std::string my_string)
 {
 	for (int i = 0; i < my_string.size(); i++)
@@ -29,6 +32,7 @@ inline bool NoDigitValidator::validate(std::string my_string)
 	return true;
 }
 
+//this function returns an error message
 inline std::string NoDigitValidator::getErrorMsg() const
 {
 	return "Can't contain digits!\n";

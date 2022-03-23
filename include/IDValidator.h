@@ -15,9 +15,10 @@ private:
 
 inline IDValidator::IDValidator()
 {
-
 }
 
+//this function validates the number of the id accoring to the control digit
+//returns true if the id number is correct, false otherwise
 inline bool IDValidator::validate(uint32_t id)
 {
 	std::string temp = std::to_string(id);
@@ -39,6 +40,7 @@ inline bool IDValidator::validate(uint32_t id)
 	return (counter % 10 == 0);
 }
 
+//this function returns an error message to the wrong control digit
 inline std::string IDValidator::getErrorMsg() const
 {
 	return "Wrong Control Digit!\n";
