@@ -114,6 +114,6 @@ bool Field<T>::validate()
 //the class d-tor
 ~Field<T>::Field()
 {
-	delete[] m_validator;
+	delete m_validator;
 }
 */
