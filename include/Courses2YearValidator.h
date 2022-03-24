@@ -10,11 +10,11 @@ public:
 	virtual bool validate();
 	std::string getErrorMsg() const;
 	void setFieldsValid();
+	//~Courses2YearValidator();
 
 private:
 	T1* m_courseField;
 	T2* m_yearField;
-
 };
 
 //this function sets the validation for the two fields in the class private members to false
@@ -67,11 +67,13 @@ std::string Courses2YearValidator<T1, T2>::getErrorMsg() const
 	return "Courses and year don't match!\n";
 }
 
-/*
 //the class d-tor
-~Courses2YearValidator<T1, T2>::Courses2YearValidator()
+/*
+template<class T1, class T2>
+Courses2YearValidator<T1, T2>::~Courses2YearValidator()
 {
 	delete m_courseField;
 	delete m_yearField;
-}
-*/
+	m_courseField = NULL;
+	m_yearField = NULL;
+}*/

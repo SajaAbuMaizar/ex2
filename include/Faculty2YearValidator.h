@@ -14,6 +14,7 @@ public:
 	bool validate();
 	std::string getErrorMsg() const;
 	void setFieldsValid();
+	//~Faculty2YearValidator();
 
 private:
 	T1* m_facultyField;
@@ -80,7 +81,8 @@ std::string Faculty2YearValidator<T1, T2>::getErrorMsg() const
 
 /*
 //the class d-tor
-~Faculty2YearValidator<T1,T2>::Faculty2YearValidator()
+template<class T1, class T2>
+Faculty2YearValidator<T1,T2>::~Faculty2YearValidator()
 {
 	delete m_facultyField;
 	delete m_yearField;

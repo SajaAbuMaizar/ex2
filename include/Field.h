@@ -20,6 +20,7 @@ public:
 	void print(std::ostream& os);
 	bool validate();
 	void setValid();
+	//~Field();
 
 private:
 	std::string m_string;
@@ -47,12 +48,10 @@ void Field<T>::fillData() {
 	std::cin >> m_answer;
 }
 
-/////////
 template <class T>
 void Field<T>::showData() {
 	std::cout << m_answer;
 }
-/////////
 
 //the class c-tor
 template <class T>
@@ -112,8 +111,8 @@ bool Field<T>::validate()
 
 /*
 //the class d-tor
-~Field<T>::Field()
+template<class T>
+Field<T>::~Field()
 {
 	delete m_validator;
-}
-*/
+}*/
