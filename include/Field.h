@@ -16,7 +16,6 @@ public:
 	Field<T>& get();
 	virtual bool getValid() const;
 	void fillData();
-	void showData();
 	void print(std::ostream& os);
 	bool validate();
 	void setValid();
@@ -46,11 +45,6 @@ void Field<T>::print(std::ostream& os)
 template <class T>
 void Field<T>::fillData() {
 	std::cin >> m_answer;
-}
-
-template <class T>
-void Field<T>::showData() {
-	std::cout << m_answer;
 }
 
 //the class c-tor
